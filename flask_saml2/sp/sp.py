@@ -4,12 +4,12 @@ from urllib.parse import urljoin
 
 from flask import (
     Blueprint, Response, abort, current_app, redirect, render_template, request,
-    session, url_for)
+    session)
 
 from flask_saml2.exceptions import CannotHandleAssertion
 from flask_saml2.signing import Digester, RsaSha1Signer, Sha1Digester, Signer
 from flask_saml2.types import X509, PKey
-from flask_saml2.utils import certificate_to_string, import_string
+from flask_saml2.utils import certificate_to_string, import_string, url_for
 
 from .idphandler import AuthData, IdPHandler
 from .views import (
